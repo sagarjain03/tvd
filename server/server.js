@@ -12,6 +12,9 @@ import quizRoutes from "./routes/quizRoutes.js";
 import storyRoutes from "./routes/storyRoutes.js";
 import matchRoutes from "./routes/matchRoutes.js";
 import chatRoutes from "./routes/chatRoutes.js";
+import aiRoutes from "./routes/aiRoutes.js";
+import gamificationRoutes from "./routes/gamificationRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
 import { socketHandler } from "./socket/socketHandler.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
@@ -76,6 +79,15 @@ app.use("/api/matches", matchRoutes);
 // Chat routes
 app.use("/api/chat", chatRoutes);
 
+// AI routes (Phase 6)
+app.use("/api/ai", aiRoutes);
+
+// Gamification routes (Phase 6)
+app.use("/api/gamification", gamificationRoutes);
+
+// Upload routes (Phase 6)
+app.use("/api/upload", uploadRoutes);
+
 // ========================
 // ERROR HANDLING
 // ========================
@@ -113,6 +125,8 @@ httpServer.listen(PORT, () => {
 ║  Env:       ${process.env.NODE_ENV}                        ║
 ║  Database:  Connected to MongoDB                          ║
 ║  Socket.io: Connected and ready for real-time chat        ║
+║  Groq AI:   Ready for personality insights                ║
+║  Cloudinary: Ready for profile uploads                    ║
 ║                                                            ║
 ║  📚 Documentation:                                         ║
 ║  - Auth Routes: /api/auth/**                              ║
@@ -120,6 +134,9 @@ httpServer.listen(PORT, () => {
 ║  - Story Routes: /api/story/**                            ║
 ║  - Match Routes: /api/matches/**                          ║
 ║  - Chat Routes: /api/chat/**                              ║
+║  - AI Routes: /api/ai/**                                  ║
+║  - Gamification Routes: /api/gamification/**              ║
+║  - Upload Routes: /api/upload/**                          ║
 ║  - Health Check: /api/health                              ║
 ║                                                            ║
 ║  ✅ Phase 1: Foundation Auth System                        ║
@@ -127,6 +144,7 @@ httpServer.listen(PORT, () => {
 ║  ✅ Phase 3: Interactive Story Mode & Archetype Evolution║
 ║  ✅ Phase 4: Compatibility Matching Engine                ║
 ║  ✅ Phase 5: Real-Time Chat System (Socket.io)            ║
+║  ✅ Phase 6: Groq AI Insights, Gamification & Cloudinary  ║
 ║                                                            ║
 ╚════════════════════════════════════════════════════════════╝
   `);
