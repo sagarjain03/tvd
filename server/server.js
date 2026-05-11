@@ -3,9 +3,16 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import passport from "passport";
+import { createServer } from "http";
+import { Server } from "socket.io";
 import { connectDB } from "./config/db.js";
 import { initPassport } from "./config/passport.js";
 import authRoutes from "./routes/authRoutes.js";
+import quizRoutes from "./routes/quizRoutes.js";
+import storyRoutes from "./routes/storyRoutes.js";
+import matchRoutes from "./routes/matchRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js";
+import { socketHandler } from "./socket/socketHandler.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
 // Load environment variables
@@ -57,6 +64,18 @@ app.get("/api/health", (req, res) => {
 // Auth routes
 app.use("/api/auth", authRoutes);
 
+// Quiz routes
+app.use("/api/quiz", quizRoutes);
+
+// Story routes
+app.use("/api/story", storyRoutes);
+
+// Match routes
+app.use("/api/matches", matchRoutes);
+
+// Chat routes
+app.use("/api/chat", chatRoutes);
+
 // ========================
 // ERROR HANDLING
 // ========================
@@ -68,24 +87,46 @@ app.use(notFound);
 app.use(errorHandler);
 
 // ========================
-// START SERVER
+// START SERVER WITH SOCKET.IO
 // ========================
 
+const httpServer = createServer(app);
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: process.env.CLIENT_URL,
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
+});
+
+// Initialize Socket.io handler for real-time chat
+socketHandler(io);
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log(`
 ╔════════════════════════════════════════════════════════════╗
-║         🧛 MysticMatch Server Started                      ║
+║         🧛 MysticMatch Server + Socket.io Started         ║
 ║                                                            ║
 ║  Server:    http://localhost:${PORT}                       ║
 ║  Env:       ${process.env.NODE_ENV}                        ║
 ║  Database:  Connected to MongoDB                          ║
+║  Socket.io: Connected and ready for real-time chat        ║
 ║                                                            ║
 ║  📚 Documentation:                                         ║
 ║  - Auth Routes: /api/auth/**                              ║
+║  - Quiz Routes: /api/quiz/**                              ║
+║  - Story Routes: /api/story/**                            ║
+║  - Match Routes: /api/matches/**                          ║
+║  - Chat Routes: /api/chat/**                              ║
 ║  - Health Check: /api/health                              ║
 ║                                                            ║
-║  💡 Phase 1: Foundation Auth System                        ║
+║  ✅ Phase 1: Foundation Auth System                        ║
+║  ✅ Phase 2: Personality Quiz & Archetype Classifier      ║
+║  ✅ Phase 3: Interactive Story Mode & Archetype Evolution║
+║  ✅ Phase 4: Compatibility Matching Engine                ║
+║  ✅ Phase 5: Real-Time Chat System (Socket.io)            ║
 ║                                                            ║
 ╚════════════════════════════════════════════════════════════╝
   `);

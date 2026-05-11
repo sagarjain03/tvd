@@ -1,0 +1,244 @@
+[
+  {
+    "chapterId": 1,
+    "title": "Awakening in Mystic Falls",
+    "description": "You arrive in Mystic Falls, a town shrouded in secrets. As darkness falls, you witness something impossible — something supernatural. Your first choice will determine how you respond.",
+    "scenes": [
+      {
+        "sceneId": "s_1_1",
+        "sceneTitle": "The Arrival",
+        "narrative": "The old Victorian mansion looms before you. Fog clings to the wrought-iron gates like a living thing. Inside, you hear... voices? Laughter? Something else? Your heart races. This town feels different. Alive. Dangerous. As you step forward, a figure in the shadows locks eyes with you. Red eyes. Unmistakably red."
+      }
+    ],
+    "decisions": [
+      {
+        "decisionId": "d_1_1",
+        "question": "The creature's eyes lock onto yours. Its voice is smooth, hypnotic: 'You're new here. Are you a snack... or do you have potential?' How do you respond?",
+        "options": [
+          {
+            "text": "Stand your ground. 'I'm neither. And I don't appreciate threats.'",
+            "traitImpact": {
+              "dominance": 2,
+              "aggression": 1,
+              "loyalty": -1
+            },
+            "consequence": "You establish yourself as someone not to be trifled with. Dangerous... but memorable."
+          },
+          {
+            "text": "Run. Trust your instincts.",
+            "traitImpact": {
+              "strategy": 2,
+              "loyalty": -2
+            },
+            "consequence": "You survive the night. But running reveals your true nature to those who hunt."
+          },
+          {
+            "text": "Engage. 'What is your name? I'd like to know who I'm speaking to.'",
+            "traitImpact": {
+              "strategy": 2,
+              "empathy": 1,
+              "emotionalDepth": 1
+            },
+            "consequence": "Information is power. This creature respects curiosity."
+          },
+          {
+            "text": "Smile back. 'Potential sounds interesting. What's in it for me?'",
+            "traitImpact": {
+              "aggression": 2,
+              "dominance": 2
+            },
+            "consequence": "You court danger deliberately. It notices. It approves."
+          }
+        ]
+      },
+      {
+        "decisionId": "d_1_2",
+        "question": "A friend from school calls you. 'Where are you? Everyone's freaking out. There's been another attack. They're saying it was an animal.' Do you tell them what you really saw?",
+        "options": [
+          {
+            "text": "Yes. Completely. They deserve to know what's really happening.",
+            "traitImpact": {
+              "loyalty": 2,
+              "empathy": 2
+            },
+            "consequence": "You trust them completely. But you've also made them a target."
+          },
+          {
+            "text": "No. You tell them it was an animal. Some secrets protect people.",
+            "traitImpact": {
+              "strategy": 2,
+              "dominance": 1
+            },
+            "consequence": "You keep the secret. You become the guardian of knowledge they don't have."
+          },
+          {
+            "text": "Tell them half the truth. Enough to be useful, but not enough to endanger them.",
+            "traitImpact": {
+              "strategy": 2,
+              "loyalty": 1,
+              "empathy": 1
+            },
+            "consequence": "Balance is everything. You've chosen a middle path."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapterId": 2,
+    "title": "Bloodlines and Betrayal",
+    "description": "The supernatural world opens before you, and with it comes a terrible choice. Where will your loyalties lie? Who do you trust? The answers will reshape who you are.",
+    "scenes": [
+      {
+        "sceneId": "s_2_1",
+        "sceneTitle": "The Revelation",
+        "narrative": "You're brought into a warehouse. Supernatural beings surround you — vampires, werewolves, witches. Two distinct groups, clearly at odds. The vampire from the first night steps forward. 'We want you to choose. Vampire covenant... or independence?' On the opposite side, a werewolf growls softly. 'Or you could choose us. Real loyalty. Real pack.' Your pulse thunders in your ears."
+      }
+    ],
+    "decisions": [
+      {
+        "decisionId": "d_2_1",
+        "question": "You're offered power, bloodline, and safety by the vampires. But it means eternal servitude to the coven. The werewolves offer freedom and belonging, but instability. Which do you choose?",
+        "options": [
+          {
+            "text": "Join the vampire coven. Power and strategy matter.",
+            "traitImpact": {
+              "dominance": 2,
+              "strategy": 2,
+              "loyalty": 2,
+              "aggression": -1
+            },
+            "consequence": "You are bound. Forever. Your archetype shifts toward Vampire nobility."
+          },
+          {
+            "text": "Join the werewolf pack. Pack is everything.",
+            "traitImpact": {
+              "loyalty": 3,
+              "aggression": 2,
+              "empathy": 1
+            },
+            "consequence": "You become family. Fierce. Protective. Werewolf instincts flow through you."
+          },
+          {
+            "text": "Walk away from both. You make your own rules.",
+            "traitImpact": {
+              "dominance": 2,
+              "strategy": 1,
+              "loyalty": -2
+            },
+            "consequence": "You are free. Hunted. Powerful in your independence."
+          },
+          {
+            "text": "Play both sides. Gain knowledge from each.",
+            "traitImpact": {
+              "strategy": 3,
+              "empathy": 1,
+              "emotionalDepth": 1
+            },
+            "consequence": "Deception becomes your armor. Information your weapon."
+          }
+        ]
+      },
+      {
+        "decisionId": "d_2_2",
+        "question": "Your closest friend has been turned into a vampire against their will. The coven wants to keep them. You can help them escape, but it means war with the vampires. What do you do?",
+        "options": [
+          {
+            "text": "They mean everything to you. Start a war if you have to. Bring them home.",
+            "traitImpact": {
+              "loyalty": 3,
+              "emotionalDepth": 2,
+              "aggression": 2
+            },
+            "consequence": "Your love knows no bounds. But you've made a dangerous enemy."
+          },
+          {
+            "text": "Convince them to accept their new life. It's safer.",
+            "traitImpact": {
+              "strategy": 2,
+              "loyalty": -2,
+              "empathy": -1
+            },
+            "consequence": "You've betrayed them to survive. Guilt will haunt you."
+          },
+          {
+            "text": "Work with a witch to find a way to undo the turning. It takes time, sacrifice.",
+            "traitImpact": {
+              "strategy": 3,
+              "empathy": 2,
+              "emotionalDepth": 1
+            },
+            "consequence": "You choose the hardest path. But it might just work."
+          },
+          {
+            "text": "Demand they join you. Power recognizes power.",
+            "traitImpact": {
+              "dominance": 2,
+              "aggression": 1,
+              "loyalty": 1
+            },
+            "consequence": "If they're strong enough, they'll follow. If not... loss."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapterId": 3,
+    "title": "The Dark Side Awakens",
+    "description": "Everyone has a dark side. In Mystic Falls, yours is awakening. This final chapter will define who you truly are — and who you'll become.",
+    "scenes": [
+      {
+        "sceneId": "s_3_1",
+        "sceneTitle": "Power and Corruption",
+        "narrative": "Supernatural power courses through your veins now. You can feel it — the hunger, the rage, the hunger for control. A mysterious figure approaches you at midnight. 'I can show you what you're really capable of. What you could become if you stopped holding back. Are you ready to embrace your true nature?'"
+      }
+    ],
+    "decisions": [
+      {
+        "decisionId": "d_3_1",
+        "question": "You're offered forbidden knowledge and power at a terrible cost — the lives of people you don't know. Power beyond imagination. Will you take it?",
+        "options": [
+          {
+            "text": "Yes. Power is survival. Everything else is secondary.",
+            "traitImpact": {
+              "dominance": 3,
+              "aggression": 2,
+              "loyalty": -2,
+              "empathy": -2
+            },
+            "consequence": "You've crossed a line. There's no going back. The Hybrid awakens in you."
+          },
+          {
+            "text": "No. You refuse. Some lines shouldn't be crossed.",
+            "traitImpact": {
+              "loyalty": 2,
+              "empathy": 2,
+              "emotionalDepth": 1
+            },
+            "consequence": "You keep your humanity. But strength has a price you won't pay."
+          },
+          {
+            "text": "Ask for a third option. There's always another way.",
+            "traitImpact": {
+              "strategy": 3,
+              "empathy": 1,
+              "emotionalDepth": 1
+            },
+            "consequence": "Your mind is your greatest weapon. It saves you."
+          },
+          {
+            "text": "Take it and find a way to undo the cost later.",
+            "traitImpact": {
+              "dominance": 1,
+              "strategy": 2,
+              "aggression": 1,
+              "loyalty": -1
+            },
+            "consequence": "You live in moral gray. Power now. Consequences later. Maybe forever."
+          }
+        ]
+      }
+    ]
+  }
+]
