@@ -827,4 +827,4 @@ Frontend runs on `http://localhost:5173`
 
 ---
 
-*Built with 🩸 and JavaScript — MysticMatch, where love is a supernatural force.*
+*Built with 🩸 and ❤️ — MysticMatch, where love is a supernatural force.*
